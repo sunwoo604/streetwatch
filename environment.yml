@@ -1,0 +1,19 @@
+name: streetwatch
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip=23.1.2
+  - requests
+  - ipykernel
+  - pip:
+    - torch>=2
+    - torchvision
+    - scipy
+    - matplotlib
+    - python-dotenv
+    - pillow
+    - pandas>=2
+    - openpyxl
+    - pyproj>=2
