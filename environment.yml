@@ -7,6 +7,7 @@ dependencies:
   - pip=23.1.2
   - requests
   - ipykernel
+  - ipywidgets
   - pip:
     - torch>=2
     - torchvision
@@ -17,3 +18,4 @@ dependencies:
     - pandas>=2
     - openpyxl
     - pyproj>=2
+    - tqdm
