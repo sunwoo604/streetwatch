@@ -86,11 +86,11 @@ def create_images(outpath='data/images/'):
             "angles": [80, 90, 100, 110, 120],
             "zoom_levels": [120, 90, 60]
         },
-        "D2727072907a": {  # Change the structure name
+        "D2727072907": { 
             "angles": [310, 320, 340, 350, 360],
             "zoom_levels": [120, 90, 60]
         },
-        "D2727072907b": {  # Change the structure name
+        "D128975": { 
             "angles": [230, 240, 250, 260, 270],
             "zoom_levels": [120, 90, 60]
         }
