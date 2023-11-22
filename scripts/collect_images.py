@@ -16,6 +16,6 @@ from collect_images.joshua import create_images as images_joshua
 
 
 if __name__== "__main__":
-    #images_phi(INPUT, OUTPATH)
+    images_phi(INPUT, OUTPATH)
     images_joshua(JOSHUA_INPUT, OUTPATH)
     
