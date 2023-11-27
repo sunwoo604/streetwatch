@@ -7,11 +7,12 @@ SECRET = os.environ.get("SECRET")
 
 
 INPUT = 'data/Q1ProjectStructureList.xlsx'
-OUTPATH = 'data/images/'
+OUTPATH = '../data/images/'
 
 
 from collect_images.phi import create_images as images_phi
-
+from collect_images.mateo import generate_images as images_mateo
 
 if __name__== "__main__":
-    images_phi(INPUT, OUTPATH)
+    #images_phi(INPUT, OUTPATH)
+    images_mateo(OUTPATH)
