@@ -74,7 +74,6 @@ def save_image(params, output_dir, key=API_KEY, secret=SECRET):
     image.save(output_dir + image_name)
     print(f"Saved " + image_name + "into " + output_dir)
 
-
 def read_json_data(file):
     with open(file, 'r') as yaml_file:
         docs = json.load(yaml_file)
@@ -84,9 +83,9 @@ def create_images(data_file, outpath):
     data = read_json_data(data_file)
     os.makedirs(outpath, exist_ok=True)
     for image_params in data:
-        save_image(image_params, outpath, key=API_KEY, secret=SECRET)
+        save_image(image_params, outpath)
 
 #%%
 if __name__ == "__main__":
-    create_images(data_file='../../data/joshua_structures.json', outpath='../../data/images/')
+    create_images(data_file='data/joshua_structures.json', outpath='/data/images/')
 

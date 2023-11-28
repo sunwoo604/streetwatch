@@ -8,7 +8,7 @@ SECRET = os.environ.get("SECRET")
 
 INPUT = 'data/Q1ProjectStructureList.xlsx'
 OUTPATH = 'data/images/'
-JOSHUA_INPUT = '../data/joshua_structures.json'
+JOSHUA_INPUT = 'data/joshua_structures.json'
 
 
 from collect_images.phi import create_images as images_phi
