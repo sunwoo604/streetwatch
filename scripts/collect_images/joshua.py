@@ -34,6 +34,33 @@ def sign_url(input_url=None, secret=None):
     return original_url + "&signature=" + encoded_signature.decode()
 
 
+def get_image(params, key=API_KEY, secret=SECRET):
+    base_url = "https://maps.googleapis.com/maps/api/streetview"
+    url = base_url + "?size={size}&location={location}&heading={heading}&pitch={pitch}&fov={fov}".format(**params)
+    url = url + f"&key={key}"
+    signed_url = sign_url(url, secret)
+    response = requests.get(signed_url)
+    if response.status_code == 200:
+        return response.content
+    else:
+        print("API Request Error:", response.status_code)
+
+
+def save_image(params, output_dir, key=API_KEY, secret=SECRET):
+    image_data = get_image(params, key, secret)
+    image = Image.open(io.BytesIO(image_data))
+    image_name = f"{params['id']}_{params['angle']}_{params['zoom']}.png"
+    os.makedirs(output_dir, exist_ok=True)
+    image.save(output_dir + image_name)
+    print(f"Saved " + image_name + "into " + output_dir)
+
+
+def read_json_data(file):
+    with open(file, 'r') as json_file:
+        docs = json.load(json_file)
+        return docs
+
+
 def add_image_data(data, filepath):
     '''
     Adds image data to json file
@@ -49,35 +76,14 @@ def add_image_data(data, filepath):
         'zoom': 0
     }
     '''
-    with open(filepath) as f:
-        file = json.load(f)
-        file.append(data)
+    json_list = read_json_data(filepath)    
+    json_list.append(data)
+
+    with open(filepath, 'w') as f:
+        json.dump(json_list, f, indent=4, separators=(',',': '))
         print("Added data:")
         print(data)
 
-def get_image(params, key=API_KEY, secret=SECRET):
-    base_url = "https://maps.googleapis.com/maps/api/streetview"
-    url = base_url + "?size={size}&location={location}&heading={heading}&pitch={pitch}&fov={fov}".format(**params)
-    url = url + f"&key={key}"
-    signed_url = sign_url(url, secret)
-    response = requests.get(signed_url)
-    if response.status_code == 200:
-        return response.content
-    else:
-        print("API Request Error:", response.status_code)
-
-def save_image(params, output_dir, key=API_KEY, secret=SECRET):
-    image_data = get_image(params, key, secret)
-    image = Image.open(io.BytesIO(image_data))
-    image_name = f"{params['id']}_{params['angle']}_{params['zoom']}.png"
-    os.makedirs(output_dir, exist_ok=True)
-    image.save(output_dir + image_name)
-    print(f"Saved " + image_name + "into " + output_dir)
-
-def read_json_data(file):
-    with open(file, 'r') as yaml_file:
-        docs = json.load(yaml_file)
-        return docs
 
 def create_images(data_file, outpath):
     data = read_json_data(data_file)
