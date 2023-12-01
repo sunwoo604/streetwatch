@@ -87,8 +87,9 @@ def capture_street_view_image(location, size="600x400", pitch=0, heading=0, fov=
         with open(file_path, "wb") as file:
             file.write(response.content)
         response.close()
-        image = Image.open(BytesIO(response.content))
-        image.show()
+        # if you want to see the image, uncomment this portion
+        #image = Image.open(BytesIO(response.content))
+        #image.show()
     else:
         print("Failed to capture Street View image.")
         print(f"Status Code: {response.status_code}")
