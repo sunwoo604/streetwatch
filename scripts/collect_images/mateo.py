@@ -61,7 +61,7 @@ def sign_url(input_url=None, secret=None):
     # Return signed URL
     return original_url + "&signature=" + encoded_signature.decode()
 
-def capture_street_view_image(location, size="600x400", pitch=0, heading=0, fov=90, outpath = '../data/images', api_key=api_key, secret_key = digi_sig):
+def capture_street_view_image(location, size="600x400", pitch=0, heading=0, fov=90, outpath = 'data/images/', api_key=api_key, secret_key = digi_sig):
     base_url = "https://maps.googleapis.com/maps/api/streetview"
     params = {
         "location": location,  # Latitude and Longitude of the location
@@ -280,4 +280,4 @@ def generate_images(outpath):
        
 
 if __name__== "__main__":
-    generate_images(outpath='../data/images/')
+    generate_images(outpath='data/images/')
