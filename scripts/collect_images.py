@@ -18,6 +18,7 @@ from collect_images.brandon import collect_imgs as images_brandon
 from collect_images.kevin import create_images as images_kevin
 from collect_images.sunny import collect_struct_json as images_sunny
 from collect_images.jonathan import get_images as images_jonathan
+from collect_images.derek import derek_create_images
 
 
 if __name__== "__main__":
@@ -27,3 +28,4 @@ if __name__== "__main__":
     images_kevin('data/kevin_structures.json', OUTPATH)
     images_sunny('data/structure_coordinates.json', OUTPATH)
     images_jonathan('data/jonathan_structures.json', OUTPATH)
+    derek_create_images()
