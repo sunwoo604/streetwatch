@@ -9,8 +9,11 @@ To run sunny.py, you need specifically structured JSON file. The JSON file will 
 
 ### Additional Files
 
-* Add 'jonathan_structures.json' file located in the HDSI Capstone 2023-2024 Sharepoint Documents/Data folder to the data directory. This is needed in order to run 'jonathan.py'.
-* Add 'kevin_structures.json' file located in the HDSI Capstone 2023-2024 Sharepoint Documents/Data folder to the data directory. This is necessary to run 'kevin.py'.
+Add various files located in the HDSI Capstone 2023-2024 Sharepoint Documents/Data folder to the data directory. This is needed in order to run `scripts/collect_images.py`:
+* `joshua_structures.json`
+* `kevin_structures.json`
+* `jonathan_structures.json`
+* `structure_coordinates.json`
 
 ## Setup
 
@@ -22,9 +25,6 @@ conda env create -f environment.yml
 
 ### Credentials
 Store credentials in `.env` file and load using [python-dotenv](https://pypi.org/project/python-dotenv/).
-
-### Additional Files
-Add `joshua_structures.json` file located in the HDSI Capstone 2023-2024 Sharepoint Documents/Data folder to the data directory. This is necessary to run `joshua.py`.
 
 ### Training Data
 Create training data by running the following after setup is complete:
