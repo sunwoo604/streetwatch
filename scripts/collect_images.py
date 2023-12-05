@@ -1,6 +1,7 @@
 
 #%%
 import os
+import requests
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -20,6 +21,7 @@ from collect_images.sunny import collect_struct_json as images_sunny
 from collect_images.jonathan import get_images as images_jonathan
 from collect_images.derek import derek_create_images
 from collect_images.kelly import collect_imgs as images_kelly
+from collect_images.noel import main as images_noel
 
 
 if __name__== "__main__":
@@ -31,3 +33,4 @@ if __name__== "__main__":
     images_jonathan('data/jonathan_structures.json', OUTPATH)
     derek_create_images()
     images_kelly(OUTPATH)
+    images_noel(OUTPATH)
