@@ -277,7 +277,6 @@ def generate_images(outpath):
     for structure in structures:
         for parama in structure:
             capture_street_view_image(parama[0], parama[1], parama[2], parama[3], parama[4], outpath)
-            print(structure, parama)
        
 
 if __name__== "__main__":
