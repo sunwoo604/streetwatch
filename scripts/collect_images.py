@@ -25,6 +25,7 @@ from collect_images.kelly import collect_imgs as images_kelly
 from collect_images.noel import main as images_noel
 from collect_images.joshua import create_images as images_joshua
 from collect_images.tram import create_images as images_tram
+from collect_images.mateo import generate_images as images_mateo
 
 
 if __name__== "__main__":
@@ -39,3 +40,4 @@ if __name__== "__main__":
     images_noel(OUTPATH)
     images_joshua(JOSHUA_INPUT, OUTPATH)
     images_tram(OUTPATH)
+    images_mateo(OUTPATH)
