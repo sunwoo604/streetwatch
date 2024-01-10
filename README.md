@@ -32,6 +32,14 @@ Create training data by running the following after setup is complete:
 python scripts/collect_images.py
 ```
 
+## Scripts
+
+### Annotation Process
+Located under scripts directory. This enables to shuffle individual coco json annotation files and split into two different group:training and validation set.
+
+### Finetuing DETR
+Located under notebooks directory. This shows the steps on how I used the collected images to train DETR to detect overhead distribution structures(poles).
+
 # Project Structure
 
 ```
